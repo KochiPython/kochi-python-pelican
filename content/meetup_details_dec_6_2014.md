@@ -1,5 +1,5 @@
 Title: First Meetup - 12/06/2014
-Date: 2014-12-01 17:00 
+Date: 2014-12-01 19:30 
 Category: Meetup
 Tags: python, meetup 
 Author: Joju Rajan
