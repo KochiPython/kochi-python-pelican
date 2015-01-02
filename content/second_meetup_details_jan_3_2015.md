@@ -9,7 +9,7 @@ Summary: Kochi Python meetup - 6th of December, 2014.
 
 After the grand succes of our first meetup, we are heading towards the second one. Please go through the schedule and venue details of the upcoming Kochi Python meetup.
 
-<img src="/images/kochi_python_2.jpeg" height="300px">
+<img src="/images/jan_2015_meetup_poster.jpeg" height="300px">
 
 **Date**: ***3rd of January, 2015***
 
