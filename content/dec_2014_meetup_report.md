@@ -8,11 +8,11 @@ about_author:pythonista • UX addict • strict monotheist • cloud admin • 
 Summary: First meetup report, held at Nuventure Technlogies on December 6, 2014
 
 
-First meetup was an exiting experience. There were 43 participants including presenters.
+First meetup was an exciting experience. There were 43 participants including presenters.
 
 Started at 4.35, <a href="https://twitter.com/MathewsBabu" target="_blank">Mathews</a> introduced Kochi Python meetup. Had an icebreaking session. Everyone introduced themeselves.
  
-<a href="https://twitter.com/theCoderDotIn" target="_blank">Rahul Ramesh</a> was the first speaker. Introduced Vagrant, for easy setup of Development workflows, Docker for the production deployment. Demonstrated simply how they help to reduce devleopment/production time in python webapp development.
+<a href="https://twitter.com/theCoderDotIn" target="_blank">Rahul Ramesh</a> was the first speaker. Introduced Vagrant, for easy setup of Development workflows, Docker for the production deployment. Demonstrated simply how they help to reduce development/production time in python webapp development.
 
 #####Slide
 <i>Will update soon</i>
@@ -25,11 +25,11 @@ Started at 4.35, <a href="https://twitter.com/MathewsBabu" target="_blank">Mathe
 
 
 
-<a href="https://twitter.com/nuventuretech" target="_blank">Nuventure</a> had arranged snacks cookies for the tea break. And we resumed the sessions after 15 minutes.
+<a href="https://twitter.com/nuventuretech" target="_blank">Nuventure</a> had arranged snacks and cookies for the tea break. And we resumed the sessions after 15 minutes.
 
-<a href="https://twitter.com/FarisAbubakar" target="_blank">Faris Aboobacker</a>, COO of Nuventure, gave a small intro about Nuventure Technology solutions, how nuventure contributing to the python community.
+<a href="https://twitter.com/FarisAbubakar" target="_blank">Faris Abubackar</a>, COO of Nuventure, gave a small intro about Nuventure Technology solutions, how nuventure is contributing to the python community.
 
-In a quick sesion, <a href="https://twitter.com/sreekanthp91" target="_blank">Sreekanth</a> exibited how anyone could write a blog post on <a href="http://kochi.python.org.in" target="_blank">KochiPython blog</a> using <a href="http://docs.getpelican.com" target="_blank">Pelican framework</a>.
+In a quick sesion, <a href="https://twitter.com/sreekanthp91" target="_blank">Sreekanth</a> showed how anyone could write a blog post on <a href="http://kochi.python.org.in" target="_blank">KochiPython blog</a> using <a href="http://docs.getpelican.com" target="_blank">Pelican framework</a>.
 
 #####Slide
 <iframe src="//slides.com/sreekanthp91/deck--2/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
