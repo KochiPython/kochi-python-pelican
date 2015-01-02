@@ -14,6 +14,8 @@ Started at 4.35, <a href="https://twitter.com/MathewsBabu" target="_blank">Mathe
  
 <a href="https://twitter.com/theCoderDotIn" target="_blank">Rahul Ramesh</a> was the first speaker. Introduced Vagrant, for easy setup of Development workflows, Docker for the production deployment. Demonstrated simply how they help to reduce devleopment/production time in python webapp development.
 
+#####Slide
+<i>Will update soon</i>
 
 <a href="https://twitter.com/jasimmk" target="_blank">Myself</a> took a flash session on how Ansible could be used for automating production deployment and maintance.
 
@@ -27,7 +29,7 @@ Started at 4.35, <a href="https://twitter.com/MathewsBabu" target="_blank">Mathe
 
 <a href="https://twitter.com/FarisAbubakar" target="_blank">Faris Aboobacker</a>, COO of Nuventure, gave a small intro about Nuventure Technology solutions, how nuventure contributing to the python community.
 
-In a quick sesion, <a href="https://twitter.com/sreekanthp91" target="_blank">Sreekanth</a> exihited how anyone could write a blog post on <a href="http://kochi.python.org.in" target="_blank">KochiPython blog</a> using <a href="http://docs.getpelican.com" target="_blank">Pelican framework</a>.
+In a quick sesion, <a href="https://twitter.com/sreekanthp91" target="_blank">Sreekanth</a> exibited how anyone could write a blog post on <a href="http://kochi.python.org.in" target="_blank">KochiPython blog</a> using <a href="http://docs.getpelican.com" target="_blank">Pelican framework</a>.
 
 #####Slide
 <iframe src="//slides.com/sreekanthp91/deck--2/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -36,10 +38,10 @@ In a quick sesion, <a href="https://twitter.com/sreekanthp91" target="_blank">Sr
 <a href="https://www.facebook.com/profile.php?id=100005948133334&fref=ts" target="_blank">Arun Jayan</a> demoed various libraries in python for hardware interaction. He explained very well on PySerial, Microhope, PyVoltmeter and his experiences as a developer at ExpEYES hardwares.
 
 #####Slide
-<a href="/slides/dec-14/pyserial/" target="_blank">PySerial
-Communication with Embedded Hardware using pyserial</a>
+<iframe src="/slides/dec-14/pyserial/" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-<a href="https://twitter.com/07_Joju" target="_blank">Joju Rajan</a> gave vote of thanks.
+
+<a href="https://twitter.com/07_Joju" target="_blank">Joju Rajan</a> gave <b>vote of thanks</b>.
 
 
 #####Meetup Photos here..
