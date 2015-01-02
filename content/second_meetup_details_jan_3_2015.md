@@ -1,11 +1,13 @@
-Title: Second Meetup Details - 3rd Jan 2015
-Date: 2015-01-01 11:30 
+Title: Second Meetup Schedule - 01/03/2015
+Date: 2015-01-02 11:30 
 Category: Meetup
 Tags: python, meetup 
 Author: Sreekanth
 Email: hello@sreekanth.co
 about_author: <a href="http://sreekanth.co" target="_blank">sreekanth.co</a>
+
 Summary: Kochi Python meetup Registration and Session details - 3rd Jan, 2014.
+
 
 After the grand succes of our first meetup, we are heading towards the second one. Please go through the schedule and venue details of the upcoming Kochi Python meetup.
 
@@ -13,7 +15,7 @@ After the grand succes of our first meetup, we are heading towards the second on
 
 **Date**: ***3rd of January, 2015***
 
-**Venue**: ***<a href="http://bit.ly/1vzGRBs">Fingent Corporation, Infopark</a>***
+**Venue**: ***<a href="http://bit.ly/1vzGRBs">Fingent Corporation, Infopark, Kakkanad</a>***
 
 *Starts at*: ***4:00 PM***<br/>
 |<br/>
