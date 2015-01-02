@@ -5,7 +5,6 @@ Tags: python, meetup
 Author: Sreekanth
 Email: hello@sreekanth.co
 about_author: <a href="http://sreekanth.co" target="_blank">sreekanth.co</a>
-
 Summary: Kochi Python meetup Registration and Session details - 3rd Jan, 2014.
 
 
