@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*- #
+# -*- coding:utf-8 -*- #
 from __future__ import unicode_literals
 
 AUTHOR = u'Jasim Muhammed'
@@ -9,6 +9,12 @@ SITEURL = ''
 PATH = 'content'
 
 TIMEZONE = 'Asia/Calcutta'
+
+READERS = {
+    'html':None
+}
+
+STATIC_PATHS = ['images', 'slides']
 
 DEFAULT_LANG = u'en'
 
@@ -25,13 +31,8 @@ LOGO = "/theme/img/python-logo.png"
 
 # Social widget
 SOCIAL = (
-    ('group', 'http://www.meetup.com/KochiPython/'),
-    ('github', 'https://github.com/KochiPython/'),
-    ('twitter-square', 'https://twitter.com/KochiPython'),
-    ('facebook', 'https://www.facebook.com/groups/kochi-python'),
-)
-# SOCIAL = (('You can add links in your config file', '#'),
-# ('Another social link', '#'),)
+('group', 'http://www.meetup.com/KochiPython/'), ('github', 'https://github.com/KochiPython/'), ('twitter-square', 'https://twitter.com/KochiPython'), ('facebook', 'https://www.facebook.com/groups/kochi-python'), )
+# SOCIAL = (('You can add links in your config file', '#'), # ('Another social link', '#'), )
 
 DEFAULT_PAGINATION = 10
 DISQUS_SITENAME = 'kochipython'

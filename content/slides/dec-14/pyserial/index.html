@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Python Kochi Meetup -- Dec 6</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>PySerial</h1>
+					<h4>Communication with Embedded Hardware using pyserial</h4>
+					<p>
+						<small>By <a href="https://www.facebook.com/arunjayan.arunjayan">Arun Jayan</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>What is Embedded System/Hardware ?</h2>
+					<p>
+						An embedded system is a computer system with a dedicated function within a larger mechanical or electrical system, often with real-time computing constraints.It is embedded as part of a complete device often including hardware and mechanical parts. Embedded systems control many devices in common use today.</br></br>Modern embedded systems are mainly based on microcontrollers
+					</p>
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Development Boards</h2>
+						<h3>MicroHOPE</h3>
+						<p>
+							It is an open hardware designed by IUAC New Delhi.</br>It is Based on Atmega32.We can program microHOPE using 
+							AVR C or Assembly Language .  
+						</p>
+						<a href="pics/mh.png">
+							<img width="400" height="320" src="pics/mh.png" alt="Down arrow">
+						</a>
+					</section>
+					<section>
+						<h3>MicroHOPE Block Diagram</h3>
+						<a href="pics/mh-hardware.png">
+							<img width="640" height="420" src="pics/mh-hardware.png" alt="Down arrow">
+						</a>
+					</section>
+					<section>
+						<h2>Arduino</h2>
+						<p>Popular Development Board in the world.It is easy to code</br>In the case of lot of libraries available for interfacing different modules like GSM,Bluetooth,ZigBee etc.</p>
+						<a href="pics/Arduino2.jpg">
+							<img width="680" height="400" src="pics/Arduino2.jpg" alt="Unicorn">
+						</a>
+					</section>
+				</section>
+
+				<section>
+					<h2>PySerial</h2>
+										<ul>
+						<li>This module encapsulates the access for the serial port.</li>
+						<li>It provides backends for Python running on Windows, Linux and MacOS</li>
+						<li>It is released under a free software license.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>PySerial Echo</h3>
+					<pre><code data-trim contenteditable>
+#echo.py
+import serial
+try:
+	fd = serial.Serial('/dev/ttyACM0', 38400, stopbits=1, timeout = 1.0)
+except:
+	print "device not connected"
+
+while 1:
+  c = raw_input('Enter a character : ')
+  fd.write(c)	
+  print 'Receiced ', fd.read()
+
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>MicroHOPE Echo program that communicate with echo.py</h3>
+					<pre><code data-trim contenteditable>
+#include "mh-uart.c"
+
+int main(void)
+{
+uint8_t data;
+uart_init(38400);
+
+for(;;)
+  {
+    data = uart_recv_byte();
+    uart_send_byte(data+1);
+  }
+}
+
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>PyVoltmeter</h3>
+					<p>Small voltmeter using microhope and python</br></p>
+						<h5>1 .microHOPE code</h5>
+					<pre><code data-trim contenteditable>
+#include "mh-uart.c"
+#include "mh-adc.c"
+int main(void)
+{
+uint8_t chan, low, hi;
+uint16_t adcval;
+uart_init(38400);
+adc_enable();
+
+for(;;)
+  {
+        adcval = read_adc(0);
+        low = adcval & 255;
+        hi = adcval >> 8;
+        uart_send_byte(low);       // send LOW byte
+        uart_send_byte(hi);        // send HI byte
+  }
+
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>PyVoltmeter</h3>
+					<h5>2 .python script</h5>
+					<pre><code data-trim contenteditable>
+import serial, time
+fd = serial.Serial('/dev/ttyACM0', 38400, stopbits=1, timeout = 1.0)
+fd.flush()	
+time.sleep(1)
+
+while 1:	
+  try:
+    low = fd.read()
+    hi = fd.read()
+    adcval = (ord(hi)<<8) | ord(low)   make 16 bit word from the two bytes
+    print 'adc out = %d , %5.3f volts'%(adcval,5.0 * adcval/1023)
+  except:
+    print 'No data'
+					</code></pre>
+				</section>
+				<section>
+					<h3>LED Control using pyserial</h3>
+					<h5>micrHOPE code</h5>
+<pre><code data-trim contenteditable>
+//led_control.c
+#include "mh-uart.c"
+int main(void)
+{
+char data;
+DDRA = 255;
+uart_init(38400);
+
+for(;;)
+  {
+    data = uart_recv_byte();
+    switch(data)
+	{	
+		case '1':PORTA=1;break;
+		case '2':PORTA=3;break;
+		case '3':PORTA=7;break;
+		case '4':PORTA=15;break;
+		case '5':PORTA=31;break;
+		case '6':PORTA=63;break;
+		case '7':PORTA=127;break;
+		case '8':PORTA=255;break;
+	}
+  }
+}
+					</code></pre>
+				</section>
+				<section>
+										<h3>LED Control using pyserial</h3>
+					<h5>Python Script</h5>
+<pre><code data-trim contenteditable>
+import serial
+import time
+try:
+	fd = serial.Serial('/dev/ttyACM2', 38400, stopbits=1, timeout = 1.0)
+except:
+	print "device not connected"
+
+while 1:
+		time.sleep(1)
+		fd.write('1')
+		print "D0"
+		time.sleep(3)
+		fd.write('2')
+		print "D0 D1"
+		time.sleep(3)
+		fd.write('3')
+		time.sleep(3)
+		fd.write('4')
+		time.sleep(3)
+		fd.write('5')
+		time.sleep(3)
+		fd.write('6')
+		time.sleep(3)
+		fd.write('7')
+		time.sleep(3)
+		fd.write('8')
+		time.sleep(3)
+
+					</code></pre>
+				</section>
+				<section>
+					<h3>LCD Control using Pyserial</h3>
+					<h5>microHOPE code</h5>
+					<pre><code data-trim contenteditable>
+						#include "mh-lcd.c"
+#include "mh-uart.c"
+int main(void)
+{
+uint8_t data;
+lcd_init();
+uart_init(38400);
+for(;;)
+  {
+    data = uart_recv_byte();
+    lcd_put_char(data);
+    if(data=='c')
+    {
+		lcd_clear();
+	}
+  }
+}
+
+					</code></pre>	
+				</section>
+				<section>
+					<h3>LCD Control using Pyserial</h3>
+					<h5>Python code</h5>
+					<pre><code data-trim contenteditable>
+					import serial
+try : 
+	ser = serial.Serial("/dev/ttyACM2",38400, stopbits=1, timeout = 1.0)
+except:
+	print "Serial port is not connected"
+	
+while True:
+	readc = raw_input("Enter ::")
+	ser.write(readc)
+	
+</code></pre>	
+				</section>
+				<section>
+					<h3>Arduino Serial</h3>
+					<h5>controlling pin13 from python script</br>Arduino code</h5>
+										<pre><code data-trim contenteditable>
+											//pin13_onoff.ino
+char readchar;
+void setup()
+{
+ //start serial port at 9600 bps;
+  Serial.begin(9600); 
+  while(!Serial){
+    ;//wait for serial port to connect .
+  }
+  pinMode(13,OUTPUT); 
+}
+void loop()
+{
+  if (Serial.available()>0){   //if serial port is available
+      //read  the incoming byte  
+    readchar = Serial.read();
+  if(readchar == 'a')
+    {  
+      digitalWrite(13,HIGH);
+      Serial.println("ON");
+    }
+    else
+    {
+      digitalWrite(13,LOW);
+      Serial.println("OFF");
+    }
+  }
+}
+</code></pre>
+				</section>
+				<section>
+					<h3>Arduino Serial</h3>
+					<h5>controlling pin13 from python script</h5>
+										<pre><code data-trim contenteditable>
+"""
+In this program , we send character 'a'  to make pin 13 of arduino HIGH.
+	if we send 'a' the n pin13 will HIGH
+	otherwise pin13 will LOW 
+"""
+import serial 
+try :
+	ser = serial.Serial('/dev/ttyACM3', 9600, stopbits=1, timeout = 1.0)
+except:
+	print "device not connected"
+
+while True:
+	readc = raw_input("Enter a character ::: ")	#read a character
+	ser.write(readc)
+	print "LED:",ser.readline()
+</code></pre>
+				</section>
+				<section>
+					<p>
+						<small>microHOPE IDE Code <a href="https://github.com/ArunJayan/expeyes-programs/blob/master/microhope/Mh-IDE/mh-ide-wxpython.py">github</a></small>
+					</p>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
