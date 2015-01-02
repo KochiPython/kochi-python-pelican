@@ -7,7 +7,7 @@ Email: jojurajan@gmail.com
 about_author: Experimental hacker with an affinity to Python • Book lover • Foodie• <a href="http://jrajan.in" target="_blank">jrajan.in</a>
 Summary: Kochi Python meetup - 6th of December, 2014.
 
-<img src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/s960x960/10620068_10152906036534252_7875118760623297004_o.jpg" height="300px">
+<img src="/images/kochi_python_1.jpg" height="300px">
 
 Hi folks, here are the updates regarding the upcoming Kochi Python meetup.
 
