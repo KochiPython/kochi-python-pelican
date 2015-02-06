@@ -1,0 +1,34 @@
+Resume Addition
+
+
+Operations
+---------------
+- Automate initial setup common to all servers. like timezone settings, initial package installations.
+- Configure nginx, uwsgi, supervisor, mysql cluster etc manually at testing servers for application platform deployment and document the procedure.
+- Automate documented procedures via ansible playbooks. Execute the batch setup of servers for staging and production environments. Seperate server groups has to be created for each brand of application platform.
+- Automate rolling out of new version of the application from git repository
+- Manage jenkins for continuous integration of the application platform.
+- Write bash/python scripts for maintance jobs/cronjobs.
+- Act as a proxy between developers and system admins.
+
+Backend Developer
+-----------------
+- Produce DRY and unit tested code for rightside's new gTLD platform.
+- Assist design of database models and associated methods.
+- Develop REST api for the platform and core functionalities from scratch.
+- Write api clients and mocks for various service providers for the platform.
+- Follow the agile workflows and sprint tickets for the development
+- Peer review of the codes and discuss about best approaches.
+- Ensure git best practises being applied to the development workflow.
+
+Frontend Development
+--------------------
+- Write frontend automation tasks (Grunt) to adapt staging, production enviroments in javascript.
+- Extend frontend tasks for image minifcation, better google pagespeed and yslow rankings of the application frontend.
+- Setup CDN accounts for various application platform brands and extend grunt to generate CDN urls based on the 'brand'.
+- Hack bootstrap, javascript, css and less code under emergency conditions.
+
+
+
+
+
