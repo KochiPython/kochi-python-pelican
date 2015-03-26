@@ -8,10 +8,10 @@ about_author: <a href="http://sreekanth.co" target="_blank">sreekanth.co</a>
 Summary: March-2015 meetup report, held at Zyxware Technologies on on March 7, 2015
 
 
-Our fourth meetup was held at <a href="http://www.zyxware.com/" target="_blank">Zyxware Technologies</a> on 7th March, 2015. The total attendence was above 30 including the speakers.
+The fourth meetup was held at <a href="http://www.zyxware.com/" target="_blank">Zyxware Technologies</a> on 7th March, 2015. Total attendence was above 30 including the speakers.
 
 
-We started at 3:30PM with the session on Logging in python for large applications by <a href="https://www.facebook.com/fayaz.yusuf.khan" target="_blank">Fayaz Yusuf Khan</a>. Fayaz started with the basic logging levels and libraries like logbook available in python. He also talked about error reporting methods in various frameworks and his experiences with the advanced logging tools like sentry.
+We started at 3:30PM with the session on <b>Logging in python for large applications</b> by <a href="https://www.facebook.com/fayaz.yusuf.khan" target="_blank">Fayaz Yusuf Khan</a>. Fayaz started with the basic logging levels and libraries like logbook available in python. He also talked about error reporting methods in various frameworks and his experiences with the advanced logging tools like sentry.
 
 
 #####Slide
@@ -21,15 +21,20 @@ We started at 3:30PM with the session on Logging in python for large application
 We resumed the sessions after the refreshment break at 4:30 PM.
 
 
-Our second session was by <a href="https://www.facebook.com/lentin.joseph" target="_blank">Lentin Joseph</a> on <b>Introduction to computer vision using openCV and python</b>. He started with different types of computer vision and explained those with real time examples. He also explained basic usage of openCV in computer vision with the help of some sample codes and demos.
+Our second session was by <a href="https://www.facebook.com/lentin.joseph" target="_blank">Lentin Joseph</a> on <b>Introduction to computer vision using openCV and python</b>. He started with different types of computer vision and explained those with real time examples. He also explained basic usage of openCV in computer vision with the help of some sample codes and practical examples.
 
 Before winding up, <a href="https://www.facebook.com/vimaljoseph" target="_blank">Vimal Joseph</a> from Zyxware Technologies delivered a talk on some interesting facts about python.
 
 The Meetup ended at 6PM.
 
 
- 
+#####Meetup Photos here..
 
+<div id="fb-root"></div> <script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/all.js#xfbml=1"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-post" data-href="https://www.facebook.com/media/set/?set=a.944471732252879.1073741832.865526293480757&type=1&amp;type=1"><div class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/media/set/?set=a.944471732252879.1073741832.865526293480757&type=1&amp;type=1">Post</a> by <a href="https://www.facebook.com/KochiPython">Kochi Python</a>.</div></div>
+
+
+ 
 
 
 
